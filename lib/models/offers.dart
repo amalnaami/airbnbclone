@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
+
 class Offers {
   final String name;
-  final String image;
+  final IconData image;
 
   Offers({
     required this.name,

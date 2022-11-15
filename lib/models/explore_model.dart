@@ -10,13 +10,13 @@ class ExploreModel {
   final String availableTime;
   final String price;
   final double rate;
-  final bool isFav;
+  bool isFav;
   final String nameDescription;
   final bool isSuperHost;
   final HostData hostModel;
   final String aboutPlace;
   final String aboutCountry;
-  final double location;
+  final List<double> location;
   final List<Offers> offers;
   final List<Reviews> reviews;
   final List<Services> additionServices;

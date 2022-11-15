@@ -1,5 +1,3 @@
-import 'package:airbnbclone/models/reviews.dart';
-
 class HostData {
   final String hostBy;
   final String placeType;
@@ -12,7 +10,6 @@ class HostData {
   final String responseTime;
   final double responseRate;
   final String responsePolicy;
-  final List<Reviews> reviews;
 
   HostData({
     required this.hostBy,
@@ -26,7 +23,6 @@ class HostData {
     required this.responseTime,
     required this.responseRate,
     required this.responsePolicy,
-    required this.reviews,
   });
 
   factory HostData.fromJson(Map<String, dynamic> json) => HostData(
@@ -41,7 +37,5 @@ class HostData {
       responseTime: json["responseTime"],
       responseRate: json["responseRate"],
       responsePolicy: json["responsePolicy"],
-      reviews: List<Reviews>.from(
-        json["reviews"].map((x) => Reviews.fromJson(x)),
-      ));
+      );
 }
