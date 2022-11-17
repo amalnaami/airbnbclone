@@ -1,4 +1,5 @@
 import 'package:airbnbclone/views/Explore/explore.dart';
+import 'package:airbnbclone/views/Profile/profile.dart';
 import 'package:flutter/material.dart';
 
 class AllViews extends StatefulWidget {
@@ -24,10 +25,7 @@ class _AllViewsState extends State<AllViews> {
       Icons.chat,
       size: 150,
     ),
-    Icon(
-      Icons.chat,
-      size: 150,
-    ),
+    Profile(),
   ];
 
   @override
@@ -61,7 +59,7 @@ class _AllViewsState extends State<AllViews> {
           ),
         ],
         currentIndex: _selectedIndex,
-        iconSize: 20, //New
+        iconSize: 20,
         onTap: _onItemTapped,
         backgroundColor: Colors.white,
         elevation: 0.0,

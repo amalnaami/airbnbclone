@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:airbnbclone/contstant/text_styles.dart';
 import 'package:airbnbclone/models/explore_model.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _ExploreDetailsState extends State<ExploreDetails> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Stack(
@@ -300,9 +301,10 @@ class _ExploreDetailsState extends State<ExploreDetails> {
                         const Divider(thickness: 1),
                         SizedBox(
                           height:
-                              widget.exploreModel.additionServices.length * 80,
+                              widget.exploreModel.additionServices.length * 60,
                           child: ListView.builder(
                               shrinkWrap: false,
+                              physics: const NeverScrollableScrollPhysics(),
                               padding: const EdgeInsets.only(top: 20),
                               itemCount:
                                   widget.exploreModel.additionServices.length,
@@ -422,6 +424,7 @@ class _ExploreDetailsState extends State<ExploreDetails> {
                             height: widget.exploreModel.offers.length * 30,
                             child: ListView.builder(
                                 shrinkWrap: false,
+                                physics: const NeverScrollableScrollPhysics(),
                                 itemCount: widget.exploreModel.offers.length,
                                 itemBuilder: (context, index) {
                                   return Padding(
@@ -547,7 +550,7 @@ class _ExploreDetailsState extends State<ExploreDetails> {
                               ),
                               Container(
                                 margin: const EdgeInsets.only(top: 20),
-                                height: MediaQuery.of(context).size.height / 4,
+                                height: MediaQuery.of(context).size.width / 2.5,
                                 child: ListView.builder(
                                     itemCount:
                                         widget.exploreModel.reviews.length,
@@ -823,76 +826,84 @@ class _ExploreDetailsState extends State<ExploreDetails> {
                   ),
                 ],
               ),
-              Container(
-                height: 60,
-                alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    border: Border(
-                        top: BorderSide(width: 1, color: Colors.black12))),
-                width: MediaQuery.of(context).size.width,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: widget.exploreModel.price,
-                                style: const TextStyle(
-                                  fontFamily: 'ManropeBold',
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                  fontSize: 15,
+              Positioned(
+                bottom: 0,
+                child: Container(
+                  height: 80,
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      border: Border(
+                          top: BorderSide(width: 1, color: Colors.black12))),
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: widget.exploreModel.price,
+                                  style: const TextStyle(
+                                    fontFamily: 'ManropeBold',
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                  ),
                                 ),
-                              ),
-                              const TextSpan(
-                                text: '  night',
-                                style: TextStyle(
-                                  fontFamily: 'ManropeBold',
-                                  color: Colors.black87,
-                                  fontSize: 15,
+                                const TextSpan(
+                                  text: '  night',
+                                  style: TextStyle(
+                                    fontFamily: 'ManropeBold',
+                                    color: Colors.black87,
+                                    fontSize: 15,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4.0),
-                          child: Text(
-                            widget.exploreModel.availableTime,
-                            style: const TextStyle(
-                              decoration: TextDecoration.underline,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 4.0),
+                            child: Text(
+                              widget.exploreModel.availableTime,
+                              style: const TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontFamily: 'ManropeBold',
+                                color: Colors.black54,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      InkWell(
+                        onTap: () {
+                          _modalBottomSheetMenu();
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.pink[400]),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          child: const Text(
+                            'Reserve',
+                            style: TextStyle(
                               fontFamily: 'ManropeBold',
-                              color: Colors.black54,
-                              fontSize: 13,
+                              color: Colors.white,
+                              fontSize: 15,
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.pink[400]),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 20),
-                      child: const Text(
-                        'Reserve',
-                        style: TextStyle(
-                          fontFamily: 'ManropeBold',
-                          color: Colors.white,
-                          fontSize: 15,
-                        ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               )
             ],
@@ -900,5 +911,126 @@ class _ExploreDetailsState extends State<ExploreDetails> {
         ),
       ),
     );
+  }
+
+  bool isSelected1 = false;
+  bool isSelected2 = false;
+
+  void _modalBottomSheetMenu() {
+    showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(40),
+          ),
+        ),
+        context: context,
+        builder: (builder) {
+          return StatefulBuilder(
+              builder: (BuildContext context, StateSetter setStater) {
+            return Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Icon(
+                          Icons.close,
+                          color: Colors.black,
+                          size: 18,
+                        ),
+                        Text(
+                          'Choose a cancellation policy',
+                          style: smallTitle.copyWith(fontSize: 15),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        )
+                      ],
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      setStater(() {
+                        isSelected1 = !isSelected1;
+                        isSelected2 = false;
+                      });
+                    },
+                    child: cancellationOptions('Non-refundable',
+                        '\$ 333 /  night - \$ 2,003 total', isSelected1),
+                  ),
+                  InkWell(
+                      onTap: () {
+                        setStater(() {
+                          isSelected2 = !isSelected2;
+                          isSelected1 = false;
+                        });
+                      },
+                      child: cancellationOptions('Refundable',
+                          '\$ 370 /  night - \$ 2,254 total', isSelected2)),
+                  Container(
+                    width: MediaQuery.of(context).size.width - 100,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.pink[400]),
+                    alignment: Alignment.center,
+                    margin: const EdgeInsets.symmetric(vertical: 20),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 20),
+                    child: const Text(
+                      'Continue',
+                      style: TextStyle(
+                        fontFamily: 'ManropeBold',
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          });
+        });
+  }
+
+  Widget cancellationOptions(String title, String desc, bool isSelect) {
+    return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 15.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  title,
+                  style: mediumDesc,
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  desc,
+                  style: smallDesc,
+                ),
+              ],
+            ),
+            isSelect
+                ? Container(
+                    height: 22,
+                    width: 22,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black, width: 6),
+                        shape: BoxShape.circle),
+                  )
+                : const Icon(
+                    Icons.circle_outlined,
+                    color: Colors.black38,
+                  )
+          ],
+        ));
   }
 }
