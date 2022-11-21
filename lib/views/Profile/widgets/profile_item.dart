@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:airbnbclone/contstant/text_styles.dart';
+import 'package:airbnbclone/core/contstant/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class ProfileItem extends StatelessWidget {

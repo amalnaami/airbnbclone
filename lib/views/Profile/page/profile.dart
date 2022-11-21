@@ -1,7 +1,7 @@
 import 'package:airbnbclone/views/Profile/widgets/profile_item.dart';
 import 'package:flutter/material.dart';
 
-import '../../contstant/text_styles.dart';
+import '../../../core/contstant/text_styles.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);

@@ -1,18 +1,21 @@
-import 'package:airbnbclone/views/AllViews/all_views.dart';
+import 'dart:async';
+
+import 'package:airbnbclone/app/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AllViews(),
-    );
-  }
+  runZonedGuarded(
+    () async {
+      FlutterError.onError = (FlutterErrorDetails details) {
+        Zone.current.handleUncaughtError(
+          details.exception,
+          details.stack ?? StackTrace.fromString("Unexpected"),
+        );
+      };
+      runApp(const App());
+    },
+    (error, stackTrace) {
+      print("Error: $error, stackTrace: $stackTrace");
+    },
+  );
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ExploreTabs extends StatelessWidget {
-  ExploreTabs({Key? key, required this.tabController}) : super(key: key);
-  TabController tabController;
+  final TabController tabController;
+
+  const ExploreTabs({
+    Key? key,
+    required this.tabController,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +18,11 @@ class ExploreTabs extends StatelessWidget {
           child: TabBar(
             isScrollable: true,
             indicatorSize: TabBarIndicatorSize.label,
-            labelColor: Colors.black,
-            unselectedLabelStyle: const TextStyle(
-              color: Colors.black,
-            ),
+            labelColor: const Color(0xFF000000),
+            unselectedLabelStyle: const TextStyle(color: Color(0xFF000000)),
             indicatorWeight: 2,
-            unselectedLabelColor: Colors.black45,
-            indicatorColor: Colors.black,
+            unselectedLabelColor: const Color(0x73000000),
+            indicatorColor: const Color(0xFF000000),
             controller: tabController,
             tabs: <Widget>[
               textTabs("Surfing", Icons.surfing),
@@ -30,11 +32,7 @@ class ExploreTabs extends StatelessWidget {
             ],
           ),
         ),
-        const Divider(
-          height: 1.5,
-          thickness: 1.5,
-          color: Colors.black12,
-        )
+        const Divider(height: 1.5, thickness: 1.5, color: Color(0x1F000000)),
       ],
     );
   }
@@ -44,17 +42,11 @@ class ExploreTabs extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(
-          iconData,
-          size: 20,
-        ),
+        Icon(iconData, size: 20),
         const SizedBox(height: 5),
         Text(
           text,
-          style: const TextStyle(
-            fontFamily: 'ManropeMedium',
-            fontSize: 12,
-          ),
+          style: const TextStyle(fontFamily: 'ManropeMedium', fontSize: 12),
         ),
       ],
     );
