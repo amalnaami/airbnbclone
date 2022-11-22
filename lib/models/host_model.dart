@@ -1,16 +1,6 @@
+/// Host Data class
 class HostData {
-  final String hostBy;
-  final String placeType;
-  final int guests;
-  final int bedRoom;
-  final int bed;
-  final int sharedBath;
-  final List<String> language;
-  final String content;
-  final String responseTime;
-  final double responseRate;
-  final String responsePolicy;
-
+  /// constructor
   HostData({
     required this.hostBy,
     required this.placeType,
@@ -25,17 +15,51 @@ class HostData {
     required this.responsePolicy,
   });
 
+  /// convert from json into Data Map<>
   factory HostData.fromJson(Map<String, dynamic> json) => HostData(
-      hostBy: json["hostBy"],
-      placeType: json["placeType"],
-      guests: json["guests"],
-      bedRoom: json["bedRoom"],
-      bed: json["bed"],
-      sharedBath: json["sharedBath"],
-      language: json["language"],
-      content: json["content"],
-      responseTime: json["responseTime"],
-      responseRate: json["responseRate"],
-      responsePolicy: json["responsePolicy"],
+        hostBy: json['hostBy'] as String,
+        placeType: json['placeType'] as String,
+        guests: json['guests'] as int,
+        bedRoom: json['bedRoom'] as int,
+        bed: json['bed'] as int,
+        sharedBath: json['sharedBath'] as int,
+        language: json['language'] as List<String>,
+        content: json['content'] as String,
+        responseTime: json['responseTime'] as String,
+        responseRate: json['responseRate'] as double,
+        responsePolicy: json['responsePolicy'] as String,
       );
+
+  /// host name
+  final String hostBy;
+
+  /// host type
+  final String placeType;
+
+  /// host guests number
+  final int guests;
+
+  /// host bedrooms number
+  final int bedRoom;
+
+  /// host beds number
+  final int bed;
+
+  /// host shared baths bumber
+  final int sharedBath;
+
+  /// host languages
+  final List<String> language;
+
+  /// host content
+  final String content;
+
+  /// host response time
+  final String responseTime;
+
+  /// host response rate
+  final double responseRate;
+
+  /// host response policy
+  final String responsePolicy;
 }

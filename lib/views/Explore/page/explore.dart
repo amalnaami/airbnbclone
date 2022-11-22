@@ -4,8 +4,10 @@ import 'package:airbnbclone/views/Explore/widgets/search_field.dart';
 import 'package:airbnbclone/views/Explore/widgets/tabs.dart';
 import 'package:flutter/material.dart';
 
+/// Explore Page
 class Explore extends StatefulWidget {
-  const Explore({Key? key}) : super(key: key);
+  /// Explore page constructor
+  const Explore({super.key});
 
   @override
   State<Explore> createState() => _ExploreState();
@@ -35,11 +37,11 @@ class _ExploreState extends State<Explore> with TickerProviderStateMixin {
                 Expanded(
                   child: TabBarView(
                     controller: _tabController,
-                    children: <Widget>[
-                      const ExploreItems(),
-                      Container(color: const Color(0xFFE91E63)),
-                      Container(color: const Color(0xFFF44336)),
-                      Container(color: const Color(0xFFFF9800)),
+                    children: const [
+                      ExploreItems(),
+                      ColoredBox(color: Color(0xFFE91E63)),
+                      ColoredBox(color: Color(0xFFF44336)),
+                      ColoredBox(color: Color(0xFFFF9800)),
                     ],
                   ),
                 ),

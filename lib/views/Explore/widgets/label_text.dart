@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// Label text widget
 class LabelText extends StatelessWidget {
-  const LabelText({Key? key}) : super(key: key);
+  /// Label text widget constructor
+  const LabelText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class LabelText extends StatelessWidget {
             color: Color(0x73000000),
             fontSize: 12,
           ),
-        )
+        ),
       ],
     );
   }

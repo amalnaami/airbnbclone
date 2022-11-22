@@ -5,6 +5,7 @@ import 'package:airbnbclone/models/reviews.dart';
 import 'package:airbnbclone/models/services.dart';
 import 'package:flutter/material.dart';
 
+/// Mock data for explore page
 List<ExploreModel> exploreDummyData = <ExploreModel>[
   ExploreModel(
       images: [
@@ -15,7 +16,7 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
       fullName: 'Santec, Bretagne, France',
       distance: 'Near Plage de Dossen',
       availableTime: 'Dec 11 - 17',
-      price: '\$291',
+      price: r'$291',
       rate: 4.92,
       isFav: false,
       nameDescription: 'Contemorary villa facing the sea',
@@ -28,8 +29,8 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
         bed: 3,
         sharedBath: 2,
         language: [],
-        content: 'Marie-laure is a Superhost/n'
-            'Superhost are experienced, highly rated hosts who are committed to providing great stays for guests.',
+        content:
+            'Marie-laure is a Superhost/n Superhost are experienced, highly rated hosts who are committed to providing great stays for guests.',
         responseTime: 'within a day',
         responseRate: 100,
         responsePolicy: '',
@@ -55,7 +56,7 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
           image:
               'https://static.remove.bg/remove-bg-web/221525818b4ba04e9088d39cdcbd0c7bcdfb052e/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
           description:
-              'Marie\'s place has the perfect location with breathtaking views. The pictures don\'t make it justice! The house is big, beach front, very well equipped. We loved our stay for full week,',
+              "Marie's place has the perfect location with breathtaking views. The pictures don't make it justice! The house is big, beach front, very well equipped. We loved our stay for full week,",
         ),
         Reviews(
           name: 'Anna',
@@ -87,9 +88,9 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
       ],
       rules: 'Check-in 4:00 PM - 8:00 PM',
       health:
-          'Airbnb\'s COVID-19 saftey practices apply.\nCarbon monoxide alarm not reported',
+          "Airbnb's COVID-19 saftey practices apply.\nCarbon monoxide alarm not reported",
       policy:
-          'Free cancellation for 48 hours.\nReviews the Host\'s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19'),
+          "Free cancellation for 48 hours.\nReviews the Host's full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19"),
   ExploreModel(
       images: [
         'https://cdn.lecollectionist.com/lc/production/uploads/photos/house-1910/2018-04-30-214088d759242733859024dd8690041f.jpg?q=65',
@@ -99,7 +100,7 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
       fullName: 'Santec, Bretagne, France',
       distance: 'Near Plage de Dossen',
       availableTime: 'Dec 11 - 17',
-      price: '\$291',
+      price: r'$291',
       rate: 4.92,
       isFav: false,
       nameDescription: 'Contemorary villa facing the sea',
@@ -112,8 +113,8 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
         bed: 3,
         sharedBath: 2,
         language: [],
-        content: 'Marie-laure is a Superhost/n'
-            'Superhost are experienced, highly rated hosts who are committed to providing great stays for guests.',
+        content:
+            'Marie-laure is a Superhost/n Superhost are experienced, highly rated hosts who are committed to providing great stays for guests.',
         responseTime: 'within a day',
         responseRate: 100,
         responsePolicy: '',
@@ -139,7 +140,7 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
           image:
               'https://static.remove.bg/remove-bg-web/221525818b4ba04e9088d39cdcbd0c7bcdfb052e/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
           description:
-              'Marie\'s place has the perfect location with breathtaking views. The pictures don\'t make it justice! The house is big, beach front, very well equipped. We loved our stay for full week,',
+              "Marie's place has the perfect location with breathtaking views. The pictures don't make it justice! The house is big, beach front, very well equipped. We loved our stay for full week,",
         ),
         Reviews(
           name: 'Anna',
@@ -171,19 +172,19 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
       ],
       rules: 'Check-in 4:00 PM - 8:00 PM',
       health:
-          'Airbnb\'s COVID-19 saftey practices apply.\nCarbon monoxide alarm not reported',
+          "Airbnb's COVID-19 saftey practices apply.\nCarbon monoxide alarm not reported",
       policy:
-          'Free cancellation for 48 hours.\nReviews the Host\'s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19'),
+          "Free cancellation for 48 hours.\nReviews the Host's full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19"),
   ExploreModel(
     images: [
-      'https://media.inmobalia.com/imgV1/B8vEv5Xh_VThvnEqMx4G0ZxU~~H0Ar_8Bn_AfAx~4dnt796zQ9QIPwzdr9PkzIdRpbOaIUG6rQkTUfRM4VBt~CJs4XmwvxWZlKaKEqqp0biWJFMs_pNikt0_qWe9bAS6nmHkSf61K6d4WlnYp9C1FgSA0PbXcXn1WSGLVN2t7D6AOA4hyMB1qUz1gpG4e3KOCD~QrnZvOyXpgfR9TPcSILg3GN5DFjPYpeZqeLCFGAvMfe414itmEDW8JeWeRSkNespuJClyp47kA7WrRXCTsp1XkQMw7GrqU88hKXYrQaPE5FKRE31WgQ7y4hfasEtcN9qBR6Y6hMBu.jpg'
-          'https://mir-s3-cdn-cf.behance.net/project_modules/fs/2d618560510703.5a4f89ff99f96.jpg',
+      'https://media.inmobalia.com/imgV1/B8vEv5Xh_VThvnEqMx4G0ZxU~~H0Ar_8Bn_AfAx~4dnt796zQ9QIPwzdr9PkzIdRpbOaIUG6rQkTUfRM4VBt~CJs4XmwvxWZlKaKEqqp0biWJFMs_pNikt0_qWe9bAS6nmHkSf61K6d4WlnYp9C1FgSA0PbXcXn1WSGLVN2t7D6AOA4hyMB1qUz1gpG4e3KOCD~QrnZvOyXpgfR9TPcSILg3GN5DFjPYpeZqeLCFGAvMfe414itmEDW8JeWeRSkNespuJClyp47kA7WrRXCTsp1XkQMw7GrqU88hKXYrQaPE5FKRE31WgQ7y4hfasEtcN9qBR6Y6hMBu.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/fs/2d618560510703.5a4f89ff99f96.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/fs/ce454d60510703.5a4f89ff9a669.jpg',
     ],
     fullName: 'Santec, Bretagne, France',
     distance: 'Near Plage de Dossen',
     availableTime: 'Dec 11 - 17',
-    price: '\$291',
+    price: r'$291',
     rate: 4.92,
     isFav: false,
     nameDescription: 'Contemorary villa facing the sea',
@@ -196,8 +197,8 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
       bed: 3,
       sharedBath: 2,
       language: [],
-      content: 'Marie-laure is a Superhost/n'
-          'Superhost are experienced, highly rated hosts who are committed to providing great stays for guests.',
+      content:
+          'Marie-laure is a Superhost/n Superhost are experienced, highly rated hosts who are committed to providing great stays for guests.',
       responseTime: 'within a day',
       responseRate: 100,
       responsePolicy: '',
@@ -223,7 +224,7 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
         image:
             'https://static.remove.bg/remove-bg-web/221525818b4ba04e9088d39cdcbd0c7bcdfb052e/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
         description:
-            'Marie\'s place has the perfect location with breathtaking views. The pictures don\'t make it justice! The house is big, beach front, very well equipped. We loved our stay for full week,',
+            "Marie's place has the perfect location with breathtaking views. The pictures don't make it justice! The house is big, beach front, very well equipped. We loved our stay for full week,",
       ),
       Reviews(
         name: 'Anna',
@@ -254,8 +255,8 @@ List<ExploreModel> exploreDummyData = <ExploreModel>[
     ],
     rules: 'Check-in 4:00 PM - 8:00 PM',
     health:
-        'Airbnb\'s COVID-19 saftey practices apply.\nCarbon monoxide alarm not reported',
+        'Airbnb COVID-19 saftey practices apply.\nCarbon monoxide alarm not reported',
     policy:
-        'Free cancellation for 48 hours.\nReviews the Host\'s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19',
+        "Free cancellation for 48 hours.\nReviews the Host's full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19",
   ),
 ];

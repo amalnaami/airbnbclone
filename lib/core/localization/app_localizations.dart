@@ -4,27 +4,32 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// App Localizations class to support multi-languages
 class AppLocalizations {
+  /// constructor
+  AppLocalizations(this.locale);
+
+  /// locale object to choose language
   final Locale locale;
   late Map<String, String> _localizedStrings;
 
-  AppLocalizations(this.locale);
-
-  // Helper method to keep the code in the widgets concise
-  // Localizations are accessed using an InheritedWidget "of" syntax
+  /// Helper method to keep the code in the widgets concise
+  /// Localizations are accessed using an InheritedWidget "of" syntax
   static AppLocalizations of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
+  /// Delegate object
   static const LocalizationsDelegate<AppLocalizations> delegate =
       _AppLocalizationsDelegate();
 
+  /// Load the language file from [assets] folder
   Future<bool> load() async {
     /// Load the language JSON file from the "lang" folder
-    String jsonString = await rootBundle.loadString(
+    final jsonString = await rootBundle.loadString(
       'assets/localization/${locale.languageCode}.json',
     );
-    Map<String, dynamic> jsonMap = json.decode(jsonString);
+    final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
 
     _localizedStrings = jsonMap.map((key, value) {
       return MapEntry(key, value.toString());
@@ -56,7 +61,7 @@ class _AppLocalizationsDelegate
   @override
   Future<AppLocalizations> load(Locale locale) async {
     /// AppLocalizations class is where the JSON loading actually runs
-    AppLocalizations localizations = AppLocalizations(locale);
+    final localizations = AppLocalizations(locale);
     await localizations.load();
     return localizations;
   }

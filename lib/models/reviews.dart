@@ -1,9 +1,6 @@
+/// Review model class
 class Reviews {
-  final String name;
-  final String time;
-  final String image;
-  final String description;
-
+  /// constructor
   Reviews({
     required this.name,
     required this.time,
@@ -11,10 +8,23 @@ class Reviews {
     required this.description,
   });
 
+  /// convert from JSON to Data Map<>
   factory Reviews.fromJson(Map<String, dynamic> json) => Reviews(
-        name: json["name"],
-        time: json["time"],
-        image: json["image"],
-        description: json["description"],
+        name: json['name'] as String,
+        time: json['time'] as String,
+        image: json['image'] as String,
+        description: json['description'] as String,
       );
+
+  /// Review name
+  final String name;
+
+  /// Review time
+  final String time;
+
+  /// Review image
+  final String image;
+
+  /// Review description
+  final String description;
 }

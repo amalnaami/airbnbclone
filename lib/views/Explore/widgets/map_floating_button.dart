@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// Map Floating Button
 class MapFloatingButton extends StatefulWidget {
-  const MapFloatingButton({Key? key}) : super(key: key);
+  ///constructor
+  const MapFloatingButton({super.key});
 
   @override
   State<MapFloatingButton> createState() => _MapFloatingButtonState();

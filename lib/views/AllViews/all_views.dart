@@ -2,8 +2,10 @@ import 'package:airbnbclone/views/Explore/page/explore.dart';
 import 'package:airbnbclone/views/Profile/page/profile.dart';
 import 'package:flutter/material.dart';
 
+/// Main page - Bottom nav bar
 class AllViews extends StatefulWidget {
-  const AllViews({Key? key}) : super(key: key);
+  /// All Views constructor
+  const AllViews({super.key});
 
   @override
   State<AllViews> createState() => _AllViewsState();
@@ -23,7 +25,7 @@ class _AllViewsState extends State<AllViews> {
         iconSize: 20,
         onTap: _onItemTapped,
         backgroundColor: Colors.white,
-        elevation: 0.0,
+        elevation: 0,
         selectedItemColor: Colors.red[900],
         selectedLabelStyle: TextStyle(
           fontFamily: 'ManropeBold',

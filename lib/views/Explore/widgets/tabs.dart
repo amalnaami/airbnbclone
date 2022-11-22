@@ -1,12 +1,16 @@
+import 'package:airbnbclone/views/Explore/widgets/text_tabs.dart';
 import 'package:flutter/material.dart';
 
+/// Explore Tabs
 class ExploreTabs extends StatelessWidget {
-  final TabController tabController;
-
+  ///constructor
   const ExploreTabs({
-    Key? key,
+    super.key,
     required this.tabController,
-  }) : super(key: key);
+  });
+
+  /// TabController to handle scroll
+  final TabController tabController;
 
   @override
   Widget build(BuildContext context) {
@@ -20,34 +24,18 @@ class ExploreTabs extends StatelessWidget {
             indicatorSize: TabBarIndicatorSize.label,
             labelColor: const Color(0xFF000000),
             unselectedLabelStyle: const TextStyle(color: Color(0xFF000000)),
-            indicatorWeight: 2,
             unselectedLabelColor: const Color(0x73000000),
             indicatorColor: const Color(0xFF000000),
             controller: tabController,
-            tabs: <Widget>[
-              textTabs("Surfing", Icons.surfing),
-              textTabs("Bed & breakfast", Icons.bedroom_baby),
-              textTabs("Notional parks", Icons.local_parking_sharp),
-              textTabs("OBeach", Icons.beach_access),
+            tabs: const <Widget>[
+              TextTabs(text: 'Surfing', iconData: Icons.surfing),
+              TextTabs(text: 'Bed & breakfast', iconData: Icons.bedroom_baby),
+              TextTabs(text: 'Notional parks', iconData: Icons.local_parking),
+              TextTabs(text: 'OBeach', iconData: Icons.beach_access),
             ],
           ),
         ),
         const Divider(height: 1.5, thickness: 1.5, color: Color(0x1F000000)),
-      ],
-    );
-  }
-
-  Widget textTabs(String text, IconData iconData) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(iconData, size: 20),
-        const SizedBox(height: 5),
-        Text(
-          text,
-          style: const TextStyle(fontFamily: 'ManropeMedium', fontSize: 12),
-        ),
       ],
     );
   }

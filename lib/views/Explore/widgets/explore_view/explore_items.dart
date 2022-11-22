@@ -2,8 +2,10 @@ import 'package:airbnbclone/core/demo_list/demo_list.dart';
 import 'package:airbnbclone/views/Explore/widgets/explore_view/widgets/explore_item.dart';
 import 'package:flutter/material.dart';
 
+/// Explore Items widget
 class ExploreItems extends StatelessWidget {
-  const ExploreItems({Key? key}) : super(key: key);
+  /// Explore Items widget constructor
+  const ExploreItems({super.key});
 
   @override
   Widget build(BuildContext context) {

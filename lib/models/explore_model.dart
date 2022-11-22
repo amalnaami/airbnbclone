@@ -3,27 +3,9 @@ import 'package:airbnbclone/models/offers.dart';
 import 'package:airbnbclone/models/reviews.dart';
 import 'package:airbnbclone/models/services.dart';
 
+/// Explore Page data model
 class ExploreModel {
-  final List<String> images;
-  final String fullName;
-  final String distance;
-  final String availableTime;
-  final String price;
-  final double rate;
-  bool isFav;
-  final String nameDescription;
-  final bool isSuperHost;
-  final HostData hostModel;
-  final String aboutPlace;
-  final String aboutCountry;
-  final List<double> location;
-  final List<Offers> offers;
-  final List<Reviews> reviews;
-  final List<Services> additionServices;
-  final String rules;
-  final String health;
-  final String policy;
-
+  /// Data model constructor
   ExploreModel({
     required this.images,
     required this.fullName,
@@ -46,31 +28,90 @@ class ExploreModel {
     required this.policy,
   });
 
+  /// convert json into Data Map<>
   factory ExploreModel.fromJson(Map<String, dynamic> json) => ExploreModel(
-        images: json["images"],
-        fullName: json["fullName"],
-        distance: json["distance"],
-        availableTime: json["availableTime"],
-        price: json["price"],
-        rate: json["rate"],
-        isFav: json["isFav"],
-        nameDescription: json["nameDescription"],
-        isSuperHost: json["isSuperHost"],
-        hostModel: HostData.fromJson(json["host"]),
-        aboutPlace: json["aboutPlace"],
-        aboutCountry: json["aboutCountry"],
-        location: json["location"],
+        images: json['images'] as List<String>,
+        fullName: json['fullName'] as String,
+        distance: json['distance'] as String,
+        availableTime: json['availableTime'] as String,
+        price: json['price'] as String,
+        rate: json['rate'] as double,
+        isFav: json['isFav'] as bool,
+        nameDescription: json['nameDescription'] as String,
+        isSuperHost: json['isSuperHost'] as bool,
+        hostModel: json['host'] as HostData,
+        aboutPlace: json['aboutPlace'] as String,
+        aboutCountry: json['aboutCountry'] as String,
+        location: json['location'] as List<double>,
         offers: List<Offers>.from(
-          json["offers"].map((x) => Offers.fromJson(x)),
+          (json['offers'] as List<double>).map((x) => Offers.fromJson),
         ),
         reviews: List<Reviews>.from(
-          json["reviews"].map((x) => Reviews.fromJson(x)),
+          (json['reviews'] as List<Reviews>).map((x) => Reviews.fromJson),
         ),
         additionServices: List<Services>.from(
-          json["additionServices"].map((x) => Services.fromJson(x)),
+          (json['additionServices'] as List<Services>)
+              .map((x) => Services.fromJson),
         ),
-        rules: json["rules"],
-        health: json["health"],
-        policy: json["policy"],
+        rules: json['rules'] as String,
+        health: json['health'] as String,
+        policy: json['policy'] as String,
       );
+
+  /// images list
+  final List<String> images;
+
+  /// item full name
+  final String fullName;
+
+  /// item distance
+  final String distance;
+
+  /// item available time
+  final String availableTime;
+
+  /// item price
+  final String price;
+
+  /// item rate
+  final double rate;
+
+  /// is item fav?
+  bool isFav;
+
+  /// item description
+  final String nameDescription;
+
+  /// does item super host?
+  final bool isSuperHost;
+
+  /// item host model
+  final HostData hostModel;
+
+  /// item about its place
+  final String aboutPlace;
+
+  /// item country
+  final String aboutCountry;
+
+  /// item location
+  final List<double> location;
+
+  /// item offers
+  final List<Offers> offers;
+
+  /// item reviews
+  final List<Reviews> reviews;
+
+  /// item addition services
+  final List<Services> additionServices;
+
+  /// item rules
+  final String rules;
+
+  /// item health
+  final String health;
+
+  /// item policies
+  final String policy;
 }

@@ -2,10 +2,14 @@
 
 import 'package:rxdart/rxdart.dart';
 
-var localeSubjectAppLanguage = BehaviorSubject<int>();
+/// Stream to change the language globally
+BehaviorSubject<int> localeSubjectAppLanguage = BehaviorSubject<int>();
 
-changeAppLanguage(int choice) => localeSubjectAppLanguage.sink.add(choice);
+/// Change language function
+void changeAppLanguage(int choice) => localeSubjectAppLanguage.sink.add(choice);
 
+/// Supported languages keys
 class AppLanguageKeys {
+  /// English language key = 0
   static const EN = 0;
 }

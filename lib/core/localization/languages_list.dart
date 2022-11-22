@@ -1,11 +1,6 @@
-class Language {
-  final int id;
-  final String name;
-  final String flag;
+import 'package:airbnbclone/models/language_model.dart';
 
-  Language(this.id, this.name, this.flag);
-}
-
+/// Supported app languages
 List<Language> languagesList = [
-  Language(0, "English: Hello", "🇬🇧"),
+  Language(id: 0, name: 'English: Hello', flag: '🇬🇧'),
 ];

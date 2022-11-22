@@ -3,13 +3,16 @@ import 'package:airbnbclone/views/Explore/widgets/explore_view/widgets/slide_ind
 import 'package:airbnbclone/views/ExploreDetails/page/explore_details.dart';
 import 'package:flutter/material.dart';
 
+/// Explore page
 class ExploreItem extends StatefulWidget {
-  final ExploreModel exploreModel;
-
+  ///constructor
   const ExploreItem({
-    Key? key,
+    super.key,
     required this.exploreModel,
-  }) : super(key: key);
+  });
+
+  /// Explore Mock data
+  final ExploreModel exploreModel;
 
   @override
   State<ExploreItem> createState() => _ExploreItemState();
@@ -21,12 +24,12 @@ class _ExploreItemState extends State<ExploreItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 30.0),
+      padding: const EdgeInsets.only(bottom: 30),
       child: InkWell(
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
+            MaterialPageRoute<void>(
               builder: (context) => ExploreDetails(
                 exploreModel: widget.exploreModel,
               ),
@@ -43,8 +46,9 @@ class _ExploreItemState extends State<ExploreItem> {
                 children: [
                   PageView.builder(
                     onPageChanged: (v) {
-                      indexPage = v;
-                      setState(() {});
+                      setState(() {
+                        indexPage = v;
+                      });
                     },
                     itemCount: widget.exploreModel.images.length,
                     itemBuilder: (context, index) {
@@ -54,13 +58,13 @@ class _ExploreItemState extends State<ExploreItem> {
                             height: MediaQuery.of(context).size.height / 3,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                 image: NetworkImage(
                                   widget.exploreModel.images[index],
                                 ),
                                 fit: BoxFit.cover,
                               ),
-                              borderRadius: BorderRadius.circular(10),
                             ),
                           ),
                           Positioned(
@@ -74,7 +78,7 @@ class _ExploreItemState extends State<ExploreItem> {
                                 });
                               },
                               child: Padding(
-                                padding: const EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.all(10),
                                 child: Icon(
                                   widget.exploreModel.isFav
                                       ? Icons.favorite
@@ -98,7 +102,7 @@ class _ExploreItemState extends State<ExploreItem> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 4.0, top: 8),
+              padding: const EdgeInsets.only(bottom: 4, top: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -138,7 +142,7 @@ class _ExploreItemState extends State<ExploreItem> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0),
+              padding: const EdgeInsets.symmetric(vertical: 4),
               child: Text(
                 widget.exploreModel.availableTime,
                 style: const TextStyle(

@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
 
+/// Item Images Slider widget
 class ItemImageSlider extends StatefulWidget {
-  final Function(int)? onImageSlide;
-  final List<String> images;
-  final Function()? likeAction;
-  final bool isFav;
-  final int indexPage;
-
+  /// Item Images Slider widget constructor
   const ItemImageSlider({
-    Key? key,
+    super.key,
     required this.onImageSlide,
     required this.images,
     required this.likeAction,
     required this.isFav,
     required this.indexPage,
-  }) : super(key: key);
+  });
+
+  /// Slide function
+  final void Function(int)? onImageSlide;
+
+  /// images
+  final List<String> images;
+
+  /// like function
+  final void Function()? likeAction;
+
+  /// is fav image
+  final bool isFav;
+
+  /// image index
+  final int indexPage;
 
   @override
   State<ItemImageSlider> createState() => _ItemImageSliderState();
@@ -44,28 +55,30 @@ class _ItemImageSliderState extends State<ItemImageSlider> {
                     ),
                   ),
                   Positioned(
-                    top: 50,
+                    top: 20,
                     left: 10,
                     right: 10,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: Row(
-                        mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          CircleAvatar(
-                            radius: 20,
-                            backgroundColor: Colors.grey[100]!,
-                            child: const Icon(
-                              Icons.arrow_back_outlined,
-                              color: Color(0xFF000000),
+                          InkWell(
+                            onTap: () => Navigator.pop(context),
+                            child: const CircleAvatar(
+                              radius: 20,
+                              backgroundColor: Color(0xFFF5F5F5),
+                              child: Icon(
+                                Icons.arrow_back_outlined,
+                                color: Color(0xFF000000),
+                              ),
                             ),
                           ),
                           const Spacer(),
-                          CircleAvatar(
+                          const CircleAvatar(
                             radius: 20,
-                            backgroundColor: Colors.grey[100]!,
-                            child: const Icon(
+                            backgroundColor: Color(0xFFF5F5F5),
+                            child: Icon(
                               Icons.upload_outlined,
                               color: Color(0xFF000000),
                             ),
@@ -98,7 +111,7 @@ class _ItemImageSliderState extends State<ItemImageSlider> {
             right: 10,
             bottom: 10,
             child: Container(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10),
               width: widget.images.length * 15,
               alignment: Alignment.center,
               decoration: BoxDecoration(

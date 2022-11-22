@@ -1,8 +1,10 @@
 import 'package:airbnbclone/views/Explore/widgets/label_text.dart';
 import 'package:flutter/material.dart';
 
+/// Search Field widget
 class SearchField extends StatefulWidget {
-  const SearchField({Key? key}) : super(key: key);
+  /// Search Field widget constructor
+  const SearchField({super.key});
 
   @override
   State<SearchField> createState() => _SearchFieldState();
@@ -13,7 +15,7 @@ class _SearchFieldState extends State<SearchField> {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      margin: const EdgeInsets.all(20.0),
+      margin: const EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width,
       decoration: decoration,
       padding: const EdgeInsets.all(10),
