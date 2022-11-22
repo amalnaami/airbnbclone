@@ -65,7 +65,6 @@ class ItemMap extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
           child: GoogleMap(
-            // mapType: MapType.normal
             markers: <Marker>{marker},
             initialCameraPosition: _kGooglePlex,
             onMapCreated: _controller.complete,
