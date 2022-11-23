@@ -3,7 +3,7 @@ import 'package:airbnbclone/core/localization/app_language.dart';
 import 'package:airbnbclone/data/prefs_helper/i_prefs_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-///
+/// Prefs Helper contains the implementation of all Shared Preferences functions
 class PrefsHelper extends IPrefsHelper {
   @override
   Future<int> getAppLanguage() async {
