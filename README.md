@@ -3,9 +3,7 @@
 
 ## Description: 
 
-A User project created in flutter using Riverpod. It supports both android and ios, clone the appropriate branches mentioned below:
-
-For Mobile: https://github.com/amalnaami/user_task
+A clone flutter for [Airbnb](https://www.airbnb.com) app.
 
 ## How to use
 
@@ -13,7 +11,7 @@ For Mobile: https://github.com/amalnaami/user_task
 Download or clone this repo by using the link below:
 
 ```bash
-  https://github.com/amalnaami/user_task
+  https://github.com/amalnaami/airbnbclone
 ```
 #### Step 2 
 Add FVM support
@@ -43,15 +41,7 @@ Also you can open user profile from bottom nav bar.
 
 ## 🚀 Screen Record
 
-
-
-I also handel if there is api status failed or disconnect internet issue.
-
-
-## 🚀 App Features
-* Get List Of Users.
-
-* Get Posts to every user.
+https://user-images.githubusercontent.com/75214477/203557613-6d028360-983c-4f88-85f5-4d008533d4e3.mp4
 
 
 ## 🚀 Libraries & Tools Used
@@ -84,6 +74,5 @@ I also handel if there is api status failed or disconnect internet issue.
      |- main.dart
   |- test
 ```
-
 
 </pre>
