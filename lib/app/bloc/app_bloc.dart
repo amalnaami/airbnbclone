@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:airbnbclone/core/localization/app_language.dart';
 import 'package:airbnbclone/data/prefs_helper/prefs_helper.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,11 +15,6 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   final PrefsHelper _prefsHelper;
 
   Future<int> _tryGetAppLanguage() async {
-    try {
-      final appLanguage = await _prefsHelper.getAppLanguage();
-      return appLanguage;
-    } catch (_) {
-      return AppLanguageKeys.EN;
-    }
+    return 0;
   }
 }
