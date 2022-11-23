@@ -1,6 +1,3 @@
-
-# User Project
-
 ## Description: 
 
 A clone flutter for [Airbnb](https://www.airbnb.com) app.
